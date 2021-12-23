@@ -1,0 +1,20 @@
+<h1 id="title">Apache E-charts with Cube.js Queries</h1>
+<div *ngIf="majorsPerCategory$ | async as majorsPerCategory" echarts [options]="majorsPerCategory" class="ca-bar-chart">
+</div>
+<div *ngIf="majorCategoriesByGender$ | async as majorCategoriesByGender" echarts [options]="majorCategoriesByGender"
+    class="ca-bar-chart"></div>
+
+<label for="group">Select a group to show popular majors</label>
+<select [(ngModel)]="selectedGroup" (ngModelChange)="getTopMajorsInGroup()" id="group" name="group">
+    <option *ngFor="let gr of ['women', 'men', 'total']" [ngValue]="gr">{{gr}}</option>
+</select>
+<div *ngIf="topGroupMajors$ | async as topGroupMajors" echarts [options]="topGroupMajors" class="ca-bar-chart"></div>
+
+<label for="group">Select a category to show popular majors</label>
+<select [(ngModel)]="selectedCategory" (ngModelChange)="getTopMajorsInCategory()" id="group" name="group">
+    <option
+        *ngFor="let cat of ['Health', 'Engineering', 'Biology & Life Science', 'Computers & Mathematics', 'Physical Sciences']"
+        [ngValue]="cat">{{cat}}</option>
+</select>
+<div *ngIf="topCategoryMajors$ | async as topCategoryMajors" echarts [options]="topCategoryMajors" class="ca-bar-chart">
+</div>

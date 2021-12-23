@@ -1,0 +1,17 @@
+.ca-bar-chart {
+    min-width: 90vw;
+    padding: 1rem;
+    margin: 3rem 1rem;
+    border: 1px solid lightgray;
+}
+
+#title {
+    margin: 3rem 1rem 0 1rem;
+    font-family: Arial;
+}
+
+select, label {
+    font-family: Arial;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
