@@ -93,35 +93,13 @@ export class AppComponent implements OnInit {
     return source$ => source$.pipe(
       map(chartData => {
         let options: EChartsOption = {
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
-          },
-          grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-          },
+          tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+          grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
           title: { text: title, show: true },
-          xAxis: {
-            type: 'category',
-            data: chartData.xAxisData,
-            name: xAxisLabel,
-            axisTick: {
-              alignWithLabel: true
-            }
-          },
+          xAxis: { type: 'category', data: chartData.xAxisData, name: xAxisLabel, axisTick: { alignWithLabel: true } },
           series: [],
-          yAxis: {
-            type: 'value',
-            name: yAxisLabel
-          },
-          legend: {
-            data: chartData.seriesLabels
-          }
+          yAxis: { type: 'value', name: yAxisLabel },
+          legend: { data: chartData.seriesLabels }
         };
 
         chartData.seriesData.forEach((series, index) => {
@@ -130,16 +108,7 @@ export class AppComponent implements OnInit {
               type: 'bar',
               data: series,
               name: chartData.seriesLabels[index],
-              label: {
-                show: true,
-                rotate: 90,
-                align: 'left',
-                verticalAlign: 'middle',
-                position: 'insideBottom',
-                distance: 15,
-                formatter: '{a} → {c}',
-                fontSize: 14,
-              }
+              label: { show: true, rotate: 90, align: 'left', verticalAlign: 'middle', position: 'insideBottom', distance: 15, formatter: '{a} → {c}', fontSize: 14 }
             });
           }
         });
