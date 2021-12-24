@@ -1,15 +1,25 @@
-<h1 id="title">Apache E-charts with Cube.js Queries</h1>
+<h1 id="title">Apache ECharts with Cube.js Query Results</h1>
+<h2>Bar Chart 1</h2>
 <div *ngIf="majorsPerCategory$ | async as majorsPerCategory" echarts [options]="majorsPerCategory" class="cm-bar-chart">
 </div>
-<div *ngIf="majorCategoriesByGender$ | async as majorCategoriesByGender" echarts [options]="majorCategoriesByGender"
-    class="cm-bar-chart"></div>
+<hr>
 
+<h2>Bar Chart 2</h2>
+<div *ngIf="majorCategoriesByGender$ | async as majorCategoriesByGender" echarts [options]="majorCategoriesByGender"
+    class="cm-bar-chart">
+</div>
+<hr>
+
+<h2>Bar Chart 3</h2>
 <label for="group">Select a group to show popular majors</label>
 <select [(ngModel)]="selectedGroup" (ngModelChange)="getTopMajorsInGroup()" id="group" name="group">
     <option *ngFor="let gr of ['women', 'men', 'total']" [ngValue]="gr">{{gr}}</option>
 </select>
-<div *ngIf="topGroupMajors$ | async as topGroupMajors" echarts [options]="topGroupMajors" class="cm-bar-chart"></div>
+<div *ngIf="topGroupMajors$ | async as topGroupMajors" echarts [options]="topGroupMajors" class="cm-bar-chart">
+</div>
+<hr>
 
+<h2>Bar Chart 4</h2>
 <label for="group">Select a category to show popular majors</label>
 <select [(ngModel)]="selectedCategory" (ngModelChange)="getTopMajorsInCategory()" id="group" name="group">
     <option

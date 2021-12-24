@@ -16,7 +16,7 @@ interface ChartData {
 })
 export class AppComponent implements OnInit {
   selectedGroup = 'total';
-  selectedCategory = 'Biology & Life Science';
+  selectedCategory = 'Physical Sciences';
 
   topGroupMajors$!: Observable<EChartsOption>;
   topCategoryMajors$!: Observable<EChartsOption>;
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  constructor(private cm: CollegeMajorsCubeService) { }
+  constructor(private cmcs: CollegeMajorsCubeService) { }
 
   ngOnInit() {
     this.getTopMajorsInGroup();
@@ -119,7 +119,7 @@ export class AppComponent implements OnInit {
   }
 
   private getChartOptions(query: Query, title = '', xAxisLabel = '', yAxisLabel = '') {
-    return this.cm.load(query).pipe(
+    return this.cmcs.load(query).pipe(
       switchMap(data => data),
       reduce((ac: ChartData, cv: object, index: number) => {
         const vals = Object.values(cv);
