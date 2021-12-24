@@ -125,7 +125,7 @@ export class AppComponent implements OnInit {
         const vals = Object.values(cv);
 
         if (index == 0) {
-          for (let i = 0; i < vals.length - 1; i++) {
+          for (let i = 1; i < vals.length; i++) {
             ac.seriesData.push([]);
           }
 
@@ -134,8 +134,8 @@ export class AppComponent implements OnInit {
 
         ac.xAxisData.push(vals[0]);
 
-        for (let i = 0; i < vals.length - 1; i++) {
-          ac.seriesData[i].push(vals[i + 1]);
+        for (let i = 1; i < vals.length; i++) {
+          ac.seriesData[i - 1].push(vals[i]);
         }
 
         return ac;
