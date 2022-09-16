@@ -1,5 +1,5 @@
 # CollegeMajorsDashboard
-
+Tutorial: https://www.smashingmagazine.com/2020/07/responsive-dashboard-angular-material-ng2-charts-schematics/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server

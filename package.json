@@ -1,9 +1,10 @@
 {
   "name": "college-majors-dashboard",
+  "description": "source: https://www.smashingmagazine.com/2020/07/responsive-dashboard-angular-material-ng2-charts-schematics/",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development"
   },
